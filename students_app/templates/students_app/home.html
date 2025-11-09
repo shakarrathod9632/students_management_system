@@ -1,0 +1,136 @@
+{% extends 'students_app/base.html' %}
+{% block content %}
+
+<div style="
+    max-width: 1000px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: rgba(0,0,0,0.1) 0 4px 14px;
+    font-family: Arial, sans-serif;
+">
+
+    <h2 style="
+        text-align:center;
+        color:#2c3e50;
+        margin-bottom:5px;
+        font-size:28px;
+        font-weight:bold;
+    ">🎓 Student Management System</h2>
+
+    <p style="
+        text-align:center;
+        color:#555;
+        font-size:15px;
+        margin-bottom:25px;
+    ">
+        Manage student records, courses, academic profiles, and system operations with ease.
+    </p>
+
+    <!-- Dashboard Stats -->
+    <div style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+        margin-bottom: 30px;
+    ">
+        <div style="
+            background:#e8f5e9;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+            transition:0.3s;
+        " onmouseover="this.style.transform='scale(1.02)';"
+          onmouseout="this.style.transform='scale(1)';">
+            <h3 style="color:#1b5e20;margin-bottom:5px;font-size:20px;">👨‍🎓 Students</h3>
+            <p style="color:#555;margin:0;">Manage all student data & profiles</p>
+        </div>
+
+        <div style="
+            background:#e3f2fd;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+            transition:0.3s;
+        " onmouseover="this.style.transform='scale(1.02)';"
+          onmouseout="this.style.transform='scale(1)';">
+            <h3 style="color:#0d47a1;margin-bottom:5px;font-size:20px;">📚 Courses</h3>
+            <p style="color:#555;margin:0;">Organize and manage course modules</p>
+        </div>
+
+        <div style="
+            background:#fff8e1;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+            transition:0.3s;
+        " onmouseover="this.style.transform='scale(1.02)';"
+          onmouseout="this.style.transform='scale(1)';">
+            <h3 style="color:#e65100;margin-bottom:5px;font-size:20px;">⚙️ Settings & Features</h3>
+            <p style="color:#555;margin:0;">Simple, powerful academic system</p>
+        </div>
+    </div>
+
+    <!-- Quick Navigation -->
+    <h3 style="color:#34495e; margin-bottom:12px; font-size:20px;">Quick Navigation</h3>
+
+    <div style="
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+        gap:12px;
+    ">
+        <a href="{% url 'student_create' %}" style="
+            background:#4CAF50;
+            color:white;
+            padding:12px;
+            border-radius:8px;
+            text-decoration:none;
+            text-align:center;
+            font-weight:bold;
+            transition:0.2s;
+        " onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">+ Add Student</a>
+
+        <a href="{% url 'student_list' %}" style="
+            background:#0277bd;
+            color:white;
+            padding:12px;
+            border-radius:8px;
+            text-decoration:none;
+            text-align:center;
+            font-weight:bold;
+            transition:0.2s;
+        " onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">📄 View Students</a>
+
+        <a href="{% url 'course_create' %}" style="
+            background:#8E44AD;
+            color:white;
+            padding:12px;
+            border-radius:8px;
+            text-decoration:none;
+            text-align:center;
+            font-weight:bold;
+            transition:0.2s;
+        " onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">+ Add Course</a>
+
+        <a href="{% url 'course_list' %}" style="
+            background:#D35400;
+            color:white;
+            padding:12px;
+            border-radius:8px;
+            text-decoration:none;
+            text-align:center;
+            font-weight:bold;
+            transition:0.2s;
+        " onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">📚 View Courses</a>
+    </div>
+
+    <hr style="margin:30px 0;">
+
+    <p style="text-align:center;color:#777;font-size:13px;">
+        Made with ❤️ for smart institution management
+    </p>
+
+</div>
+
+{% endblock %}

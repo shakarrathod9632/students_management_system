@@ -1,0 +1,66 @@
+{% extends 'students_app/base.html' %}
+{% block content %}
+
+<div style="max-width:600px;margin:auto;background:white;padding:25px;border-radius:10px;
+           box-shadow:0 0 10px rgba(0,0,0,0.2);">
+
+    <h2 style="text-align:center;margin-bottom:20px;">Add Student</h2>
+
+    <form method="POST" enctype="multipart/form-data" style="display:flex;flex-direction:column;gap:15px;">
+        {% csrf_token %}
+
+        <!-- Styled form fields -->
+        <div style="display:flex;flex-direction:column;gap:10px;">
+
+            {{ form.non_field_errors }}
+
+            {% for field in form %}
+                <div style="display:flex;flex-direction:column;">
+                    <label style="font-weight:bold;margin-bottom:5px;">{{ field.label }}:</label>
+                    {{ field }}
+
+                    {% if field.errors %}
+                        <small style="color:red;">{{ field.errors|striptags }}</small>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit"
+                style="padding:12px;background:#0b5ed7;color:white;font-size:16px;
+                       border:none;border-radius:5px;cursor:pointer;">
+            Save Student
+        </button>
+    </form>
+</div>
+
+<!-- Responsive design -->
+<style>
+    input, select, textarea {
+        width: 100%;
+        padding:10px;
+        border:1px solid #ccc;
+        border-radius:5px;
+        font-size:15px;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        border-color:#0b5ed7;
+        outline:none;
+        box-shadow:0 0 5px rgba(11,94,215,0.4);
+    }
+
+    button:hover {
+        background:#084db8;
+    }
+
+    @media(max-width:480px){
+        div[style*="max-width"] {
+            padding:15px;
+        }
+        button { font-size:14px; }
+    }
+</style>
+
+{% endblock %}

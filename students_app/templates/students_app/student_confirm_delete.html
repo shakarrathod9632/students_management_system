@@ -1,0 +1,11 @@
+{% extends 'students_app/base.html' %}
+{% block content %}
+<h2>Delete Student</h2>
+<p>Are you sure you want to delete <b>{{ student.name }}</b>?</p>
+
+<form method="POST">
+{% csrf_token %}
+<button style="background:red;color:white;padding:10px;border:none;border-radius:5px;">Delete</button>
+<a href="/students/" style="margin-left:10px;">Cancel</a>
+</form>
+{% endblock %}

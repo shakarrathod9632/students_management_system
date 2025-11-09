@@ -1,0 +1,20 @@
+{% extends 'students_app/base.html' %}
+{% block content %}
+<h2>Student Profile</h2>
+
+<div style="background:white;padding:20px;border-radius:5px;">
+
+{% if student.profile_pic %}
+<img src="{{ student.profile_pic.url }}" width="120" style="border-radius:8px;"><br><br>
+{% endif %}
+
+<p><b>Name:</b> {{ student.name }}</p>
+<p><b>Email:</b> {{ student.email }}</p>
+<p><b>Phone:</b> {{ student.phone }}</p>
+<p><b>Gender:</b> {{ student.gender }}</p>
+<p><b>Course:</b> {{ student.course.name }}</p>
+<p><b>Address:</b> {{ student.address }}</p>
+
+<a href="/students/" style="color:blue;">Back</a>
+</div>
+{% endblock %}

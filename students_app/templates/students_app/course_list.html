@@ -1,0 +1,25 @@
+{% extends 'students_app/base.html' %}
+{% block content %}
+<h2>Courses</h2>
+
+<a href="/courses/add/" style="background:green;color:white;padding:10px;text-decoration:none;border-radius:5px;">Add Course</a>
+<br><br>
+
+<table border="1" cellpadding="10" style="background:white;border-collapse:collapse;width:100%;">
+<tr style="background:#333;color:white;">
+ <th>Name</th>
+ <th>Description</th>
+ <th>Actions</th>
+</tr>
+{% for course in courses %}
+<tr>
+ <td>{{ course.name }}</td>
+ <td>{{ course.description }}</td>
+ <td>
+    <a href="/courses/{{ course.id }}/edit/" style="color:orange;">Edit</a> |
+    <a href="/courses/{{ course.id }}/delete/" style="color:red;">Delete</a>
+ </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends 'students_app/base.html' %}
+{% block content %}
+
+<div style="font-family:Arial; max-width:1200px; margin:auto; padding:20px;">
+
+    <!-- Dashboard Title -->
+    <h2 style="color:#2c3e50;font-weight:700;margin-bottom:30px;text-align:center;">
+        📊 Dashboard Overview
+    </h2>
+
+    <!-- Stats Cards -->
+    <div style="
+        display:flex;
+        {% comment %} flex-wrap:wrap; {% endcomment %}
+        gap:25px;
+        justify-content:center;
+        margin-bottom:35px;
+    ">
+
+        <!-- Students Card -->
+        <div style="
+            flex:1; min-width:200px; max-width:200px;
+            background:#ffffff;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+            text-align:center;
+        ">
+            <h3 style="color:#34495e;margin-bottom:10px;">👨‍🎓 Students</h3>
+            <p style="font-size:32px;font-weight:bold;color:#2980b9;">{{ total_students }}</p>
+        </div>
+
+        <!-- Courses Card -->
+        <div style="
+            flex:1; min-width:200px; max-width:200px;
+            background:#ffffff;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+            text-align:center;
+        ">
+            <h3 style="color:#34495e;margin-bottom:10px;">📚 Courses</h3>
+            <p style="font-size:32px;font-weight:bold;color:#8e44ad;">{{ total_courses }}</p>
+        </div>
+
+        <!-- Active Staff Card -->
+        <div style="
+            flex:1; min-width:200px; max-width:200px;
+            background:#ffffff;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+            text-align:center;
+        ">
+            <h3 style="color:#34495e;margin-bottom:10px;">🧑‍🏫 Active Staff</h3>
+            <p style="font-size:32px;font-weight:bold;color:#27ae60;">5</p>
+        </div>
+
+        <!-- System Usage -->
+        <div style="
+            flex:1; min-width:200px; max-width:200px;
+            background:#ffffff;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+            text-align:center;
+        ">
+            <h3 style="color:#34495e;margin-bottom:10px;">⚙ System Usage</h3>
+            <p style="font-size:32px;font-weight:bold;color:#d35400;">89%</p>
+        </div>
+    </div>
+
+    <!-- Bottom Section -->
+    <div style="
+        display:flex;
+        flex-wrap:wrap;
+        gap:25px;
+        justify-content:center;
+    ">
+        <!-- Recent Activity -->
+        <div style="
+            flex:1; min-width:350px;
+            background:#ffffff;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        ">
+            <h3 style="color:#2c3e50;margin-bottom:15px;">🕘 Recent Activity</h3>
+            <ul style="line-height:28px;color:#555;margin-left:15px;">
+                <li>New student registered</li>
+                <li>Course updated by admin</li>
+                <li>Student profile edited</li>
+                <li>New course added</li>
+            </ul>
+        </div>
+
+        <!-- Student Distribution -->
+        <div style="
+            flex:1; min-width:350px;
+            background:#ffffff;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        ">
+            <h3 style="color:#2c3e50;margin-bottom:15px;">📈 Student Distribution</h3>
+            <p style="color:#7f8c8d;">Coming Soon: Graph of student enrollment per course</p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
